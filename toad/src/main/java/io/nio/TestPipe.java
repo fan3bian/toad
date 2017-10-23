@@ -20,6 +20,7 @@ public class TestPipe {
 		Pipe.SourceChannel sourceChannel = pipe.source();
 		buf.flip();
 		int len = sourceChannel.read(buf);
+		
 		System.out.println(new String(buf.array(), 0, len));
 		
 		sourceChannel.close();
