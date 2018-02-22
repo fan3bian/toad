@@ -3,6 +3,7 @@ package util;
 
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.Objects;
 import java.util.regex.Pattern;
 
 /**
@@ -10,7 +11,12 @@ import java.util.regex.Pattern;
  */
 public class ValidatorUtils {
 
-    public static boolean validateCharSequence(String pattern, CharSequence target) {
-        return StringUtils.isNotBlank(target) && Pattern.compile(pattern).matcher(target).matches();
+    public static boolean validateCharSequence(String regex, CharSequence target) {
+        return StringUtils.isNotBlank(target) && Pattern.compile(regex).matcher(target).matches();
+    }
+
+    public static void main(String[] args) {
+        boolean numeric = StringUtils.isNumeric("5");
+        Objects.requireNonNull(null,"null happens here");
     }
 }
