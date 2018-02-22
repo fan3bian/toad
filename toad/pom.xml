@@ -4,6 +4,18 @@
 	<groupId>com.fan3bian.toad</groupId>
 	<artifactId>toad</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 	<dependencies>
 
 		<dependency>
@@ -46,6 +58,12 @@
 			<!--<artifactId>poi</artifactId>-->
 			<!--<version>3.17</version>-->
 		<!--</dependency>-->
+		<!-- https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils -->
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>1.9.3</version>
+		</dependency>
 
 
 	</dependencies>
