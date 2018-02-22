@@ -9,7 +9,6 @@ import domain.Student;
 public class TestStudent {
     public static void main(String[] args) {
         StudentService studentService =new StudentServiceImpl();
-        Student student = studentService.getStudent(null);
-        student.getAge();
+
     }
 }

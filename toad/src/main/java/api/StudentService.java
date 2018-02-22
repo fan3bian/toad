@@ -1,7 +1,5 @@
 package api;
 
-import domain.Student;
-
 /**
  * Created by zhangshuyi1 on 2018/2/15.
  */
@@ -11,5 +9,5 @@ public interface StudentService {
      * @param id
      * @return Student
      */
-    public Student getStudent(Long id);
+    public void getStudent(Long id);
 }
