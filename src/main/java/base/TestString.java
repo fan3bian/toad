@@ -1,7 +1,9 @@
 package base;
 
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.text.StringEscapeUtils;
+import org.apache.poi.util.StringUtil;
 import org.junit.Test;
 
 /**
@@ -47,5 +49,10 @@ public class TestString {
 		
 		
 	}
+	@Test
+	public void testApacheString(){
+	Double d =null;
+	String str = String.valueOf(d);
 	
+	}
 }
