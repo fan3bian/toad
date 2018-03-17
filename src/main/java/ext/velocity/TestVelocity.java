@@ -34,6 +34,9 @@ public class TestVelocity {
         t.merge(ctx,sw);
         System.out.println(sw.toString());
     }
-
+    
+    public void test(){
+    	
+    }
 
 }
