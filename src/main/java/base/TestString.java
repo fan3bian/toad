@@ -1,9 +1,9 @@
 package base;
 
 
-import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.text.StringEscapeUtils;
-import org.apache.poi.util.StringUtil;
+import java.math.BigDecimal;
+
+import org.apache.poi.util.SystemOutLogger;
 import org.junit.Test;
 
 /**
@@ -50,9 +50,10 @@ public class TestString {
 		
 	}
 	@Test
-	public void testApacheString(){
-	Double d =null;
-	String str = String.valueOf(d);
-	
+	public void testBigDecimal(){
+		BigDecimal bd =new BigDecimal(0);
+		BigDecimal bd2 =new BigDecimal(0.0);
+		System.out.println(bd);
+		System.out.println(bd2);
 	}
 }
