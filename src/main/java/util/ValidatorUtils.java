@@ -10,6 +10,7 @@ import java.util.regex.Pattern;
  * Created by zhangshuyi1 on 2018/1/18.
  */
 public class ValidatorUtils {
+	 public static final String GOODS_NO_REGEX = "^CMG[0-9]{9,13}";
     /**
      * null ' '
      * 字符串格式校验
@@ -22,7 +23,10 @@ public class ValidatorUtils {
     }
 
     public static void main(String[] args) {
-        boolean numeric = StringUtils.isNumeric("5");
-        Objects.requireNonNull(null,"null happens here");
+//        boolean numeric = StringUtils.isNumeric("5");
+//        Objects.requireNonNull(null,"null happens here");
+    	
+    	System.out.println(validateCharSequence(GOODS_NO_REGEX,"CMG4398046519293"));
     }
+    
 }

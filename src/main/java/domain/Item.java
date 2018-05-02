@@ -1,5 +1,7 @@
 package domain;
 
+import java.util.Date;
+
 /**
  * Created by zhangshuyi1 on 2018/2/12.
  */
@@ -9,6 +11,7 @@ public class Item {
     private String shortName;
     private String englistName;
     private Double price;
+    private Date date;
 
     public Long getId() {
         return id;
@@ -49,4 +52,13 @@ public class Item {
     public void setPrice(Double price) {
         this.price = price;
     }
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+    
 }
