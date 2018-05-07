@@ -2,13 +2,15 @@ package domain;
 
 import com.google.gson.annotations.Expose;
 
+import java.io.Serializable;
+
 /**
  * 使用场景：承运执行系统京配转三方，帮助青龙计算三方应付
  * 对接青龙-财务系统
  *
  * Created by zhangshuyi1 on 2018/3/8.
  */
-public class BdFinanceDTO {
+public class BdFinanceDTO implements Serializable{
     private transient String soNo;
     /**
      * 青龙运单号
