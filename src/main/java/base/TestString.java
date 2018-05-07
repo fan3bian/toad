@@ -56,4 +56,9 @@ public class TestString {
 		System.out.println(bd);
 		System.out.println(bd2);
 	}
+	@Test
+	public void testH(){
+		String shopNo = "^CY[Y|S][0-9]{9,13}";
+		
+	}
 }
