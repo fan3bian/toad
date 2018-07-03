@@ -109,7 +109,7 @@ public class ColdBoxDto {
 //                "  \"name\":\"zhangshuyi\",\n" +
 //                "  \"operateTime\": \"2018-06-07 11:32:52\"\n" +
 //                "}     ";
-//        ColdBoxDto coldBoxDto = JsonUtil.fromJson(str, ColdBoxDto.class);
+//      ColdBoxDto coldBoxDto = JsonUtil.fromJson(str, ColdBoxDto.class);
         ColdBoxDto coldBoxDto = new ColdBoxDto();
         coldBoxDto.setBoxNo("Box00001");
         coldBoxDto.setDistributionNo("001");
