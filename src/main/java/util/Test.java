@@ -3,6 +3,11 @@ package util;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
+
+import com.sun.org.apache.xpath.internal.SourceTree;
+
+import domain.Student;
 
 public class Test {
 	public static void main(String[] args) throws ParseException {
@@ -29,5 +34,27 @@ public class Test {
 		String arr[] = packNos.split(",");
 		System.out.println(Arrays.toString(arr));
 	}
-
+	@org.junit.Test
+	public void test2(){
+		Student s = new Student();
+		s.setId(1L);
+		s.setAge(2);
+		s.setName("zhang");
+		s.setDate(new Date());
+		System.out.println(JsonUtil.toJson(s));
+	}
+	@org.junit.Test
+	public void test4(){
+		int a = 1;
+		switch (a){
+			case 1:
+				System.out.println(a+1);
+			case 2:
+			case 3:
+				System.out.println(a);
+			case 4:
+				System.out.println(a);
+				
+		}
+	}
 }
