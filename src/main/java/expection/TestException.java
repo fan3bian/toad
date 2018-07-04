@@ -23,10 +23,11 @@ public class TestException {
             System.out.println("available is ["+available+"]");
             byte b[] = new byte [5];
             int len ,a;
-           while ((len = is.read(b))!=-1){
+            while ((len = is.read(b))!=-1){
                    /*((a = is.read())!= -1){
                sb.append(a);*/
-               System.out.println(len);
+                   ;
+               System.out.println(new String(b));
            }
             System.out.println(sb.toString());
         }finally {
