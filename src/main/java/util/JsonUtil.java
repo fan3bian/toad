@@ -72,7 +72,7 @@ public final class JsonUtil {
     static {
         MAPPER = generateMapper(JsonSerialize.Inclusion.ALWAYS);
         GSON = new GsonBuilder()
-                .setDateFormat("yyyy-MM-dd HH:mm:ss")
+                //.setDateFormat("yyyy-MM-dd HH:mm:ss")
                 .disableHtmlEscaping()
                 .create();
     }
