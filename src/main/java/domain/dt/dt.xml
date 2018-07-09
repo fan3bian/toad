@@ -1,0 +1,19 @@
+<dt>
+    <sources>
+        <source id="Sourcef47" format="java" alias="body">
+            <attr name="code" type="String" format="class" formatRule="java.lang.String"/>
+            <attr name="flag" type="String" format="class" formatRule="java.lang.String"/>
+            <attr name="entryOrderCode" type="String" format="class" formatRule="java.lang.String"/>
+            <attr name="createTime" type="String" format="class" formatRule="java.lang.String"/>
+            <attr name="message" type="String" format="class" formatRule="java.lang.String"/>
+        </source>
+    </sources>
+    <mapper>
+        <target format="java" formatRule="java.util.HashMap">
+            <attr name="flag" type="String" format="class" expression="${body.flag}"/>
+            <attr name="code" type="Number" format="class" expression="${body.code}"/>
+            <attr name="entryOrderId" type="String" format="class"/>
+            <attr name="message" type="String" format="class" expression="${body.message}"/>
+        </target>
+    </mapper>
+</dt>
