@@ -1,5 +1,9 @@
 package domain;
 
+import com.thoughtworks.xstream.XStream;
+import ext.xml.XmlUtil;
+import org.apache.xmlbeans.impl.common.XmlStreamUtils;
+
 import java.util.Date;
 
 /**
@@ -48,6 +52,8 @@ public class Student {
         student.setId(1L);
         student.setName("zhangshuyi");
         student.setDate(new Date());
+        String s = "<id>1231</id><name>1231</name><age>1231</age><date>1231</date>";
+        Student s2 = (Student) XmlUtil.fromXml(s,Student.class);
     }
     
 }
