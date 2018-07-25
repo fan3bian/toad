@@ -5,7 +5,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
-import java.util.stream.Stream;
+//import java.util.stream.Stream;
 
 /**
  * Created by zhangshuyi1 on 2018/5/2.
@@ -13,8 +13,8 @@ import java.util.stream.Stream;
 public class FileUtil {
     public static String readFile(String filePath) throws IOException {
 
-        Stream<String> stream = Files.lines(Paths.get(filePath), StandardCharsets.UTF_8);
-        stream.forEach(System.out::println);
+//        Stream<String> stream = Files.lines(Paths.get(filePath), StandardCharsets.UTF_8);
+//        stream.forEach(System.out::println);
         return null;
     }
 
