@@ -1,10 +1,9 @@
 package base;
 
 
-import java.math.BigDecimal;
-
-import org.apache.poi.util.SystemOutLogger;
 import org.junit.Test;
+
+import java.math.BigDecimal;
 
 /**
  * Created by zhangshuyi1 on 2018/2/12.
@@ -60,5 +59,11 @@ public class TestString {
 	public void testH(){
 		String shopNo = "^CY[Y|S][0-9]{9,13}";
 		
+	}
+	@Test
+	public void testString(){
+		String s = "asdf";
+		String[] arr = s.split(",");
+
 	}
 }
