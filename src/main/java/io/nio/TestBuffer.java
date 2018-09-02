@@ -1,17 +1,20 @@
 package io.nio;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.junit.Test;
+
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 
+
 //import org.apache.log4j.Logger;
-import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 
 
 public class TestBuffer {
-//	org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(getClass());
-	Logger logger = LoggerFactory.getLogger(getClass());
+	static final Logger logger = LogManager.getLogger(TestBuffer.class.getName());
+
 	@Test
 	public void test(){
 		ByteBuffer buffer =  ByteBuffer.allocate(1024);

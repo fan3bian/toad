@@ -11,7 +11,7 @@ public class TestExpression {
 
     public static void main(String[] args) {
 
-        String exprStr=" val>=1000 && val<=2000 ";
+        String exprStr=" val>=1000&&val<=2000 ";
 
         JexlExpression expr = engine.createExpression(exprStr);
         JexlContext ctx = new MapContext();

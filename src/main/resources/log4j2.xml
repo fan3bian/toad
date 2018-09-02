@@ -6,12 +6,11 @@
         </Console>
     </Appenders>
     <Loggers>
-        <Root level="trace">
+        <Logger name="com.foo.Bar" level="trace">
+            <AppenderRef ref="Console"/>
+        </Logger>
+        <Root level="error">
             <AppenderRef ref="Console"/>
         </Root>
     </Loggers>
-    <Logger name="com.foo.Bar" level="TRACE"/>
-    <Root level="ERROR">
-        <AppenderRef ref="STDOUT" />
-    </Root>
 </Configuration>
