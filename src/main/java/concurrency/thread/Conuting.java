@@ -5,9 +5,10 @@ public class Conuting {
     public static void main(String[] args) throws InterruptedException {
         class Counter{
             int count = 0;
+            //synchronized
             void increment(){
                 count++;
-            }
+            }//synchronized 位于void之前
             int getCount(){
                 return  count;
             }
@@ -16,11 +17,12 @@ public class Conuting {
         class CountingThread extends Thread{
             @Override
             public void run() {
-                for (int i = 0; i <10000000; i++) {
+                for (int i = 0; i <1000000000; i++) {
                     counter.increment();
                 }
             }
         }
+        long start = System.currentTimeMillis();
         CountingThread countingThread1 = new CountingThread();
         CountingThread countingThread2 = new CountingThread();
         countingThread1.start();
@@ -28,6 +30,8 @@ public class Conuting {
         countingThread1.join();
         countingThread2.join();
         System.out.println(counter.getCount());
-        System.out.println("ending");
+        long end = System.currentTimeMillis();
+
+        System.out.println("time : "+(end-start));
     }
 }
