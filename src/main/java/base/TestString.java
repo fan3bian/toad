@@ -3,6 +3,7 @@ package base;
 
 import org.junit.Test;
 
+import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
 
 /**
@@ -61,9 +62,13 @@ public class TestString {
 		
 	}
 	@Test
-	public void testString(){
-		String s = "asdf";
-		String[] arr = s.split(",");
+	public void testString() throws UnsupportedEncodingException {
+		String s = "什么";
+//		s= "张";
+		int length = s.getBytes("GBK").length;
+
+//		String[] arr = s.split(",");
+		System.out.println(length);
 
 	}
 }

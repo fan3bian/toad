@@ -18,6 +18,9 @@ public class TestExpression {
     public final static String AMOUNT2 = "^-?\\\\d+(\\\\.\\\\d+)?$";
     public final String positiveFloat = "^(([0-9]+\\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\\.[0-9]+)|([0-9]*[1-9][0-9]*))$";
     public final String non_positiveF="^\\d+(\\.\\d+)?$";
+    String CO_NO="^CYD[0-9]{9,17}";
+    String CO_PACKAGE="^CYD[0-9]{9,20}-(\\d+?)-(\\d+?)";
+
     public static void main(String[] args) {
 
         String exprStr=" val>=1000&&val<=2000 ";
@@ -46,6 +49,16 @@ public class TestExpression {
         System.out.println(ValidatorUtils.validateCharSequence(non_positiveF,"0"));
         System.out.println(ValidatorUtils.validateCharSequence(non_positiveF,"123123"));
         System.out.println(ValidatorUtils.validateCharSequence(non_positiveF,"1231.1231231231"));
+    }
+    @Test
+    public void test3(){
+
+        System.out.println(ValidatorUtils.validateCharSequence(CO_PACKAGE,"CYD00000020011542037"));
+        System.out.println(ValidatorUtils.validateCharSequence(CO_PACKAGE,"CYD00000020011542037-1"));
+        System.out.println(ValidatorUtils.validateCharSequence(CO_PACKAGE,"CYD00000020011542037-1-2"));
+        System.out.println(ValidatorUtils.validateCharSequence(CO_PACKAGE,"CYD00000020011542037-2-"));
+        System.out.println(ValidatorUtils.validateCharSequence(CO_PACKAGE,"CYD00000020011542037--"));
+
     }
 
 }
