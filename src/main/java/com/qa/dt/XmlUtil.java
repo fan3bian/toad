@@ -1,4 +1,4 @@
-package com.qa.Dt;
+package com.qa.dt;
 
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
