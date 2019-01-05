@@ -2,6 +2,7 @@
 package com.qa;
 
 import javax.xml.bind.annotation.XmlRegistry;
+import java.util.List;
 
 
 /**
@@ -18,7 +19,7 @@ import javax.xml.bind.annotation.XmlRegistry;
  * provided in this class.
  * 
  */
-@XmlRegistry
+//@XmlRegistry
 public class ObjectFactory {
 
 
@@ -90,7 +91,21 @@ public class ObjectFactory {
         Dt dt = objectFactory.createDt();
         dt.setMapper(new Dt.Mapper());
         dt.setSources(new Dt.Sources());
+        Dt.Sources.Source source = new Dt.Sources.Source();
+        dt.getSources().setSource(source);
+//        Dt.Mapper.Target.Attr
+        List<Dt.Sources.Source.Attr> List = dt.getSources().getSource().getAttr();
+        Dt.Sources.Source.Attr attr = new Dt.Sources.Source.Attr();
+        attr.setFormat("");
+        List.add(attr);
+
         String s = XmlUtil.toXml(dt, Dt.class);
         System.out.println(s);
+    }
+    public static Dt create(){
+        Dt dt =new Dt();
+        Dt.Sources sources = new Dt.Sources();
+        Dt.Mapper mapper = new Dt.Mapper();
+        return dt;
     }
 }

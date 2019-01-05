@@ -1,26 +1,23 @@
 package base.collection;
 
-import domain.Student;
+import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
+/**
+ * Created by zhangshuyi1 on 2018/11/18.
+ */
 public class TestCollection {
-    private static final Object[] EMPTY_ELEMENTDATA = {1};
-
-    public static void main(String[] args) {
-        List list =new ArrayList<>();
-        list.add(1);
-        list.add(1);
-        list.add(0,0);
-        list.remove(1);
-        System.out.println(list);
-        Student s = new Student();
-        List<Student> lists =new ArrayList<>();
-        lists.add(s);
-//        Collections.sort(lists);
+    @Test
+    public void test(){
+        Collection c ;
+        Map<String, Object> map = new HashMap<>();
+        map.put("a","a");
+        Map<String,Object> tmpMap =new HashMap<>(map);
+        System.out.println(map.equals(tmpMap));
+        System.out.println(map==tmpMap);
     }
-
 
 }

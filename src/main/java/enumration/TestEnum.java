@@ -1,10 +1,11 @@
 package enumration;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.lang.reflect.Field;
+import java.util.*;
 
+import domain.SSendpay;
+import domain.WbMarkUtil;
+import org.apache.commons.lang.StringUtils;
 import org.junit.Test;
 
 import util.JsonUtil;
@@ -38,6 +39,25 @@ public class TestEnum {
         baseFieldSet.add(ProductBaseFieldEnum.CATEGORY);
         
         System.out.println(JsonUtil.toJson(baseFieldSet));
+	}
+	@Test
+	public void test2() throws Exception{
+		WbMarkUtil sendpay = new WbMarkUtil();
+		SSendpay ssendpay = new SSendpay();
+		Map<Integer,String> blankFiledMap = new HashMap<Integer, String>();
+		Map<Integer,Integer> blankIndexMap = new HashMap<Integer, Integer>();
+//		WbMarkEnum[] values = WbMarkEnum.values();
+		for (WbMarkEnum obj : WbMarkEnum.values()){
+			System.out.println(obj.getFieldName());
+			if (StringUtils.isBlank(obj.getFieldName()) && obj.getKey() == '0') {
+				blankIndexMap.put(obj.getIndex(),obj.getIndex());
+				continue;
+			}
+			blankFiledMap.put(obj.getIndex(),obj.getFieldName());
+			Field field = ssendpay.getClass().getDeclaredField(obj.getFieldName());
+			field.setAccessible(true);
+			field.set(ssendpay, sendpay.byteAt(obj.getIndex()));
+		}
 	}
 }
 		
