@@ -64,6 +64,7 @@ public class TestString {
 	@Test
 	public void testString() throws UnsupportedEncodingException {
 		String s = "什么";
+		s.substring(1);
 //		s= "张";
 		int length = s.getBytes("GBK").length;
 

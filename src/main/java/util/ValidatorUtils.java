@@ -11,6 +11,7 @@ import java.util.regex.Pattern;
  */
 public class ValidatorUtils {
 	 public static final String GOODS_NO_REGEX = "^CMG[0-9]{9,13}";
+	 public static final String SO_NO_REGEX = "^CSL[0-9]{9,15}";
     /**
      * null ' '
      * 字符串格式校验
@@ -26,7 +27,7 @@ public class ValidatorUtils {
 //        boolean numeric = StringUtils.isNumeric("5");
 //        Objects.requireNonNull(null,"null happens here");
     	
-    	System.out.println(validateCharSequence(GOODS_NO_REGEX,"CMG4398046519293"));
+    	System.out.println(validateCharSequence(SO_NO_REGEX,"CSL13214139537988"));
     }
     
 }
