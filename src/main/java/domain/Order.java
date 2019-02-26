@@ -2,6 +2,7 @@ package domain;
 
 public class Order {
     private String orderNo;
+    private String bizNo;
     private Boolean subOrder;
     private boolean cod;
 
@@ -29,4 +30,11 @@ public class Order {
         this.cod = cod;
     }
 
+    public String getBizNo() {
+        return bizNo;
+    }
+
+    public void setBizNo(String bizNo) {
+        this.bizNo = bizNo;
+    }
 }
