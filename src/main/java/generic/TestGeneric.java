@@ -14,8 +14,8 @@ public class TestGeneric {
     }
     @Test
     public void test2() throws NoSuchMethodException {
-        Method declaredMethod = CustomerFunctions.class.getDeclaredMethod("syaHello",String.class);
-        Method method2 = CustomerFunctions.class.getDeclaredMethod("mergeItems", List.class, Map.class,String.class);
+//        Method declaredMethod = CustomerFunctions.class.getDeclaredMethod("syaHello",String.class);
+//        Method method2 = CustomerFunctions.class.getDeclaredMethod("mergeItems", List.class, Map.class,String.class);
 //        declaredMethod.invoke()
 
     }

@@ -13,10 +13,21 @@ import org.junit.Test;
 public class TestIO {
 	@Test
 	public void test1(){
-		InputStream is;
-		OutputStream outputStream;
-		Writer writer;
-		Reader reader;
+		//a particular file or a directory
+		String dirPath = "E:\\github\\go";
+		File directory = new File(dirPath);
+		String[] list = directory.list();//if a dir, return arr of files
+
+		//read files
+		String filePath = "E:\\github\\go\\cal.go";
+		File file = new File(filePath);
+		String[] list1 = file.list();//if a file ,return null
+		try {
+			InputStream inputStream = new FileInputStream(file);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		//writefiles
 	}
 	@Test
 	public void testWriteFile() throws IOException{
