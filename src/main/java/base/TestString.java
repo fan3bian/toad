@@ -72,4 +72,10 @@ public class TestString {
 		System.out.println(length);
 
 	}
+	@Test
+	public void testAdd(){
+    	String a = "1";
+    	String b = null;
+		System.out.println(a+b);
+	}
 }

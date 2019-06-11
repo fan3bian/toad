@@ -60,5 +60,11 @@ public class Item {
 	public void setDate(Date date) {
 		this.date = date;
 	}
-    
+
+    public static void main(String[] args) {
+        String s = "";
+        String a = null;
+        String b = null;
+        System.out.println(s+a+b);
+    }
 }
