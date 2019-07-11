@@ -5,6 +5,8 @@ import org.junit.Test;
 import domain.BdFinanceDTO;
 import util.JsonUtil;
 
+import java.math.BigDecimal;
+
 public class TestDouble {
 	public static void main(String[] args) {
 		Double a = 1.2;
@@ -23,6 +25,12 @@ public class TestDouble {
 		b.setSortBatchNo("sdf");
 		b.setSoNo("soNo");
 		System.out.println(JsonUtil.toJson(b));
+	}
+	@Test
+	public void testBigDecimal(){
+		Integer a = null;
+		BigDecimal bigDecimal = new BigDecimal(a);
+		System.out.println(bigDecimal);
 	}
 }
 	
