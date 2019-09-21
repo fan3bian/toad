@@ -5,33 +5,17 @@ import java.util.*;
 public class Test1 {
     static class TwoSum {
 
-        //1.Two Sum
-    /*
-     Given an array of integers, return indices of the two numbers such that they add up to a specific target.
-     You may assume that each input would have exactly one solution, and you may not use the same element twice.
-     Example:
-     Given nums = [2, 7, 11, 15], target = 9,
-     Because nums[0] + nums[1] = 2 + 7 = 9,
-     return [0, 1].
-     https://leetcode.com/articles/two-sum/
-     */
-        public static int[] twoSum(int[] sums, int target) {
-            int i, j;
-            int[] retArr = new int[2];
-            for (i = 0; i < sums.length; i++) {
-                for (j = 0; j < sums.length; j++) {
-                    if (sums[i] + sums[j] == target) {
-                        retArr[0] = i;
-                        retArr[1] = j;
+        public static int[] twoSum(int[] nums, int target) {
+            for (int i = 0; i < nums.length; i++) {
+                for (int j = i + 1; j < nums.length; j++) {
+                    if (nums[j] == target - nums[i]) {
+                        return new int[]{i, j};
                     }
                 }
             }
-            return retArr;
+            throw new IllegalArgumentException("No two sum solution");
         }
 
-        /*
-
-         */
         public static int[] twoSum2(int[] nums, int target) {
             Map<Integer, Integer> map = new HashMap<>();
             for (int i = 0; i < nums.length; i++) {
@@ -100,23 +84,24 @@ Explanation: 342 + 465 = 807.
             return list;
         }
     }
-    public static class LongestSubstringWithoutRepeatingCharacters{
+
+    public static class LongestSubstringWithoutRepeatingCharacters {
         public static int lengthOfLongestSubstring(String s) {
             int n = s.length();
             Set<Character> set = new HashSet<>();
             int ans = 0, i = 0, j = 0;
             while (i < n && j < n) {
                 // try to extend the range [i, j]
-                if (!set.contains(s.charAt(j))){
+                if (!set.contains(s.charAt(j))) {
                     set.add(s.charAt(j++));
                     ans = Math.max(ans, j - i);
-                }
-                else {
+                } else {
                     set.remove(s.charAt(i++));
                 }
             }
             return ans;
         }
+
         public static int lengthOfLongestSubstring2(String s) {
             int n = s.length(), ans = 0;
             Map<Character, Integer> map = new HashMap<>(); // current index of character
@@ -130,6 +115,7 @@ Explanation: 342 + 465 = 807.
             }
             return ans;
         }
+
         public static int lengthOfLongestSubstring3(String s) {
             int n = s.length(), ans = 0;
             int[] index = new int[128]; // current index of character
@@ -142,9 +128,10 @@ Explanation: 342 + 465 = 807.
             return ans;
         }
     }
+
     public static void main(String[] args) {
-//        int[] paramArr = new int[]{2, 7, 11, 15};
-//        System.out.println(Arrays.toString(TwoSum.twoSum(paramArr, 9)));
-        LongestSubstringWithoutRepeatingCharacters.lengthOfLongestSubstring2("sequence");
+        int[] paramArr = new int[]{3, 6, 11, 5};
+        System.out.println(Arrays.toString(TwoSum.twoSum(paramArr, 10)));
+//        LongestSubstringWithoutRepeatingCharacters.lengthOfLongestSubstring2("sequence");
     }
 }

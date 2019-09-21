@@ -10,14 +10,17 @@ import net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombi
 import java.util.regex.Pattern;
 
 public class TestPinyin {
-    private static final String regex = "[^(\\u4e00-\\u9fa5)]";//非汉语
+    private static final String regex = "[^\\u4e00-\\u9fa5]";//非汉语
 
     public static void main(String[] args) throws Exception {
         //1.过滤字母/数字/特殊字符，只保留汉字
-        String regex = "[^(\\u4e00-\\u9fa5)]";
+//        String regex = "[\\u4e00-\\u9fa5]";
+
+//        String regex = "[^(\\u4e00-\\u9fa5)]";
+
 //        //2.
 
-        String str = "zhangshuyi1@jd.com涨良";
+        String str = "@#￥%……&*——+!@#$%^&*()（）_+汉%……&*——+!@字！@#￥%……&*——+!@#$%^&*()（）_+";
 
 
 //        String  str = "hello你好吗,我很好 thank you";
@@ -68,7 +71,9 @@ public class TestPinyin {
 
     private  static String genMnemonic(String goodsName){
         String hanyu = Pattern.compile(regex).matcher(goodsName).replaceAll("");
-        return getPinYinHeadChar(hanyu);
+        System.out.println("过滤后的汉字：["+hanyu+"]");
+//        return getPinYinHeadChar(hanyu);
+        return "";
     }
 
 
