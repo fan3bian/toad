@@ -1,9 +1,9 @@
 package advanced.lambda;
 
+import com.google.common.collect.Lists;
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.function.IntSupplier;
 
 import static java.lang.System.out;
@@ -26,6 +26,20 @@ public class TestLambda {
         String[] legendArr = legends.toArray(new String[legends.size()]);
         Arrays.sort(legendArr,(String s1,String s2) -> (s1.compareTo(s2)));
 
+
+    }
+    @Test
+    public void test2(){
+        ArrayList<String> strings = Lists.newArrayList("Ashe", "Garen", "Ryze");
+        Collections.sort(strings, new Comparator<String>() {
+            @Override
+            public int compare(String s, String s2) {
+                return Integer.compare(s.length(), s2.length());
+            }
+        });
+
+        Collections.sort(strings, (s1, s2) -> Integer.compare(s1.length(), s2.length()));
+        Collections.sort(strings, Comparator.comparingInt(String::length));
 
     }
 }
