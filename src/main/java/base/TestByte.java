@@ -23,4 +23,12 @@ public class TestByte {
 		System.out.println(c);
 		System.out.println('6'==c);
 	}
+
+	@Test
+	public void test2(){
+		Byte a = 1;
+		System.out.println(a==1);//true
+		System.out.println(a.equals(1));//false
+	}
+
 }
