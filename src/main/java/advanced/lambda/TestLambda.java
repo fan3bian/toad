@@ -1,12 +1,17 @@
 package advanced.lambda;
 
 import com.google.common.collect.Lists;
+import interfaces.S;
 import org.junit.Test;
 
+import javax.annotation.Resource;
 import java.util.*;
+import java.util.function.Function;
 import java.util.function.IntSupplier;
+import java.util.stream.Stream;
 
 import static java.lang.System.out;
+import static java.lang.System.setOut;
 
 //static import
 
@@ -40,6 +45,22 @@ public class TestLambda {
 
         Collections.sort(strings, (s1, s2) -> Integer.compare(s1.length(), s2.length()));
         Collections.sort(strings, Comparator.comparingInt(String::length));
+
+    }
+    @Test
+    public void testFuntionalInterface(){
+        System.out.println(((Inter) () -> "quao").getName());
+    }
+    @Test
+    public void testMethodReference(){
+        Function function;
+        Map<String, String> stringStringHashMap = new HashMap<>();
+        System.out.println(Integer.parseInt("5"));
+    }
+    @Test
+    public void testStream(){
+        List lists = Lists.newArrayList("ha","he","he","ha");
+        lists.forEach(x -> System.out.println(x));
 
     }
 }
