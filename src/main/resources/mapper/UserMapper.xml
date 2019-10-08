@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.fan3bian.toad.domain.entity.User">
+<mapper namespace="com.fan3bian.toad.mapper.UserMapper">
 
-    <insert id="insert">
+    <!--mybatis 二级缓存 eviction:回收策略LRU FIFO-->
+    <cache eviction="LRU" readOnly="false" size="1024"></cache>
+
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
       INSERT INTO `t_user`(`username`,`password`) VALUES (#{username},#{password})
     </insert>
     <select id="countByUsername" resultType="java.lang.Integer">
       SELECT count(1) FROM t_user WHERE username = #{username}
   </select>
+    <!--<select id="getAll" resultType="java.lang.Integer">-->
+      <!--SELECT count(1) FROM t_user WHERE username = #{username}-->
+  <!--</select>-->
+    <select id="getUser" resultType="User">
+        SELECT * FROM t_user WHERE id  = #{id}
+    </select>
 </mapper>
