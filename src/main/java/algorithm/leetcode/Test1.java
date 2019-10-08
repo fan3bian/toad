@@ -53,35 +53,25 @@ Explanation: 342 + 465 = 807.
             if (l1 == null || l2 == null) {
                 throw new IllegalArgumentException("L1 L2 is null");
             }
-            List<Integer> list1 = convetrToList(l1);
-            List<Integer> list2 = convetrToList(l1);
-            int sum = 0;
-            for (int i = list1.size() - 1; i >= 0; i--) {
-                sum += list1.get(i);
-            }
-            for (int i = list2.size() - 2; i >= 0; i--) {
-                sum += list2.get(i);
-            }
-            ListNode listNode;
-            List<Integer> list = new ArrayList<>();
-            do {
-                list.add(sum %= 10);
-            }
 
-            while (sum != 0);
-            for (int i = list.size() - 1; i >= 0; i--) {
-                listNode = new ListNode(list.get(i));
+            //两个链表可以使用同一个循环
+            ListNode dummyHead = new ListNode(0);
+            ListNode p = l1, q = l2, curr = dummyHead;
+            int carry = 0;
+            while (p != null || q != null) {
+                int x = (p != null) ? p.num : 0;
+                int y = (q != null) ? q.num : 0;
+                int sum = carry + x + y;
+                carry = sum / 10;
+                curr.next = new ListNode(sum % 10);
+                curr = curr.next;
+                if (p != null) p = p.next;
+                if (q != null) q = q.next;
             }
-//            ListNode rln = new  ListNode();
-            return null;
-        }
-
-        private static List<Integer> convetrToList(ListNode ln) {
-            List<Integer> list = new ArrayList();
-            do
-                list.add(ln.num);
-            while (ln.next != null);
-            return list;
+            if (carry > 0) {
+                curr.next = new ListNode(carry);
+            }
+            return dummyHead.next;
         }
     }
 

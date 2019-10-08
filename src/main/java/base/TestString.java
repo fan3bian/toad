@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
+import java.util.Locale;
 
 /**
  * Created by zhangshuyi1 on 2018/2/12.
@@ -77,5 +78,11 @@ public class TestString {
     	String a = "1";
     	String b = null;
 		System.out.println(a+b);
+	}
+
+	@Test
+	public void testToLowerCase(){
+		System.out.println("WwWwTt".toLowerCase(Locale.ENGLISH));
+		System.out.println("WwWwTt".toLowerCase(Locale.US));
 	}
 }
