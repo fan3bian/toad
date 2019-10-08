@@ -1,6 +1,6 @@
 package algorithm.leetcode;
 
-import java.util.Map;
+import java.util.*;
 
 public class Test6 {
     static class ZigZagConversion{
@@ -21,5 +21,29 @@ public class Test6 {
 
             return null;
         }
+    }
+    static int  reverse(int x){
+        List<Integer> list = new ArrayList<>();
+        while (x != 0){
+            int temp = x /10 ;
+            x = x % 10;
+
+            if(temp > 0){
+                list.add(temp);
+            }else{
+                list.add(x);
+            }
+        }
+        int result = 0;
+        for (int i = list.size() - 1; i >= 0; i--) {
+            result += list.get(i) * 10;
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        int reverse = reverse(12);
+        System.out.println(reverse);
+
     }
 }
