@@ -121,7 +121,7 @@ Explanation: 342 + 465 = 807.
 
     public static void main(String[] args) {
         int[] paramArr = new int[]{3, 6, 11, 5};
-        System.out.println(Arrays.toString(TwoSum.twoSum(paramArr, 10)));
-//        LongestSubstringWithoutRepeatingCharacters.lengthOfLongestSubstring2("sequence");
+//        System.out.println(Arrays.toString(TwoSum.twoSum(paramArr, 10)));
+        LongestSubstringWithoutRepeatingCharacters.lengthOfLongestSubstring("sequence");
     }
 }

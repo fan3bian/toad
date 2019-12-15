@@ -49,14 +49,13 @@ public class TestMybatis {
         sqlSession.close();
     }
     @Test
-    public void testCache() throws IOException{
+    public void aVoidtestCache() throws IOException{
         //mybatis一级缓存：相同线程，先访问缓存，缓存不存在访问数据库，并加载结果至缓存。若对结果进行更改，缓存也会改。
         String resource = "mybatis-config.xml";
         InputStream inputStream = Resources.getResourceAsStream(resource);
         SqlSessionFactory sqlSessionFactory =
                 new SqlSessionFactoryBuilder().build(inputStream);
-//        Configuration configuration = sqlSessionFactory.getConfiguration();
-        System.out.println(sqlSessionFactory.getClass());//org.apache.ibatis.session.defaults.DefaultSqlSessionFactory
+//        Configuration configuration = sqlSessionFactory.getConfiguration();       System.out.println(sqlSessionFactory.getClass());//org.apache.ibatis.session.defaults.DefaultSqlSessionFactory
         SqlSession sqlSession = sqlSessionFactory.openSession();
 
 //        User user= sqlSession.selectOne("com.fan3bian.toad.mapper.UserMapper.getUser", 12);
