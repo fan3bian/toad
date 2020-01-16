@@ -41,23 +41,31 @@ public class TestEnum {
         System.out.println(JsonUtil.toJson(baseFieldSet));
 	}
 	@Test
-	public void test2() throws Exception{
-		WbMarkUtil sendpay = new WbMarkUtil();
-		SSendpay ssendpay = new SSendpay();
-		Map<Integer,String> blankFiledMap = new HashMap<Integer, String>();
-		Map<Integer,Integer> blankIndexMap = new HashMap<Integer, Integer>();
+	public void test2() throws Exception {
+        WbMarkUtil sendpay = new WbMarkUtil();
+        SSendpay ssendpay = new SSendpay();
+        Map<Integer, String> blankFiledMap = new HashMap<Integer, String>();
+        Map<Integer, Integer> blankIndexMap = new HashMap<Integer, Integer>();
 //		WbMarkEnum[] values = WbMarkEnum.values();
-		for (WbMarkEnum obj : WbMarkEnum.values()){
-			System.out.println(obj.getFieldName());
-			if (StringUtils.isBlank(obj.getFieldName()) && obj.getKey() == '0') {
-				blankIndexMap.put(obj.getIndex(),obj.getIndex());
-				continue;
-			}
-			blankFiledMap.put(obj.getIndex(),obj.getFieldName());
-			Field field = ssendpay.getClass().getDeclaredField(obj.getFieldName());
-			field.setAccessible(true);
-			field.set(ssendpay, sendpay.byteAt(obj.getIndex()));
-		}
-	}
+        for (WbMarkEnum obj : WbMarkEnum.values()) {
+            System.out.println(obj.getFieldName());
+            if (StringUtils.isBlank(obj.getFieldName()) && obj.getKey() == '0') {
+                blankIndexMap.put(obj.getIndex(), obj.getIndex());
+                continue;
+            }
+            blankFiledMap.put(obj.getIndex(), obj.getFieldName());
+            Field field = ssendpay.getClass().getDeclaredField(obj.getFieldName());
+            field.setAccessible(true);
+            field.set(ssendpay, sendpay.byteAt(obj.getIndex()));
+        }
+    }
+    @Test
+    public void test3() throws Exception{
+        RtwSourceEnum[] values = RtwSourceEnum.values();
+        for (RtwSourceEnum value : values) {
+            System.out.println(value.getParamName());
+            System.out.println(value.getParamNameDes());
+        }
+    }
 }
 		

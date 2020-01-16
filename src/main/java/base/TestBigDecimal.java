@@ -16,13 +16,20 @@ public class TestBigDecimal {
 
         System.out.println(bigDecimal2.scale());
     }
+
+    /**
+     * 测试精度
+     */
     @Test
     public void tes2t(){
 
-        BigDecimal bigDecimal1= new BigDecimal("2.00");
+        BigDecimal bigDecimal1= new BigDecimal("2.00000");
         BigDecimal bigDecimal2= new BigDecimal("2.0");
+        BigDecimal bigDecimal3= new BigDecimal("2");
         System.out.println(bigDecimal1.equals(bigDecimal2));
         System.out.println(bigDecimal1.scale());
         System.out.println(bigDecimal2.scale());
+        System.out.println(bigDecimal3.scale());
+        System.out.println(bigDecimal1.stripTrailingZeros().scale());
     }
 }

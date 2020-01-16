@@ -12,6 +12,7 @@ import util.JsonUtil;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.math.BigDecimal;
 import java.util.Date;
 
 public class TestMybatis {
@@ -76,6 +77,14 @@ public class TestMybatis {
         User user2 = userMapper.getUser(12L);
         System.out.println(user==user2);
         System.out.println(JsonUtil.toJson(user2));
+    }
+    @Test
+    public void  test3(){
+
+        BigDecimal b = new BigDecimal(874.0);
+        if (new BigDecimal(b.intValue()).compareTo(b) != 0){
+            System.out.println("aa");
+        }
     }
 
 }

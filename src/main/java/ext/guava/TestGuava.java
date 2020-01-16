@@ -1,19 +1,20 @@
 package ext.guava;
 
 import com.google.common.base.Function;
-import com.google.common.collect.*;
+import com.google.common.base.Predicate;
+import com.google.common.collect.Collections2;
+import com.google.common.collect.ImmutableListMultimap;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Multimaps;
 import org.junit.Test;
-import util.JsonUtil;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class TestGuava {
     @Test
-    public void testMaps(){
+    public void testMaps() {
         ArrayList<String> strings = Lists.newArrayList("zhangshuyi", "wangqiongqiong", "wangpingping", "xuande", "quao", "ahangshuyi");
 
 //        ImmutableMap<Integer, String> objectStringImmutableMap = Maps.uniqueIndex(strings, new Function<String, Integer>() {
@@ -28,7 +29,7 @@ public class TestGuava {
             }
         });
 //        ImmutableList<String> list = index.get(10);
-        List<String > list = new ArrayList<>(index.get(10));
+        List<String> list = new ArrayList<>(index.get(10));
         Collections.sort(list, new Comparator<String>() {
             @Override
             public int compare(String o1, String o2) {
@@ -37,12 +38,47 @@ public class TestGuava {
         });
         System.out.println(list);
     }
+
     @Test
-    public void testBigDecimal(){
+    public void testBigDecimal() {
         BigDecimal origin = new BigDecimal(23);
         BigDecimal subtract = origin.subtract(new BigDecimal(2));
-        System.out.println("oriing:"+ origin);
-        System.out.println("subtract:"+ subtract);
+        System.out.println("oriing:" + origin);
+        System.out.println("subtract:" + subtract);
+
+    }
+
+    @Test
+    public void streams() {
+        ArrayList<String> strings = Lists.newArrayList("zhangshuyi", "wangqiongqiong", "wangpingping", "xuande", "quao", "ahangshuyi");
+//        Collection<String> filter = Collections2.filter(strings, new Predicate<String>() {
+//            @Override
+//            public boolean apply(String s) {
+//                return s.contains("zshuyi");
+//            }
+//        });
+//        System.out.println(filter.getClass());
+//        System.out.println(JsonUtil.toJson(filter));
+        strings.forEach(s -> System.out.println(s.contains("shuyi")));
+//        strings.removeIf(s -> s.contains("shuyi"));
+        System.out.println(strings);
+        List<String> shuyi = strings.stream().filter(s -> s.contains("shuyi")).collect(Collectors.toList());
+        System.out.println(shuyi);
+
+    }
+
+    @Test
+    public void testCollections2() {
+        ArrayList<String> strings = Lists.newArrayList("zhangshuyi", "wangqiongqiong", "wangpingping", "xuande", "quao", "ahangshuyi");
+        Collection<String> filter = Collections2.filter(strings, new Predicate<String>() {
+            @Override
+            public boolean apply(String s) {
+                return s.contains("shuyi");
+            }
+        });
+        System.out.println(filter.getClass());
+        ArrayList<String> strs = new ArrayList<>(filter);
+        System.out.println(strs);
 
     }
 
