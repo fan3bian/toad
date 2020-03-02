@@ -7,6 +7,9 @@ import java.math.BigDecimal;
 public class TestBigDecimal {
     @Test
     public void test(){
+        System.out.println("adsfasdf111".toString().hashCode());
+
+
         BigDecimal zero = BigDecimal.ZERO;
         BigDecimal bigDecimal= new BigDecimal("-9.0");
         BigDecimal bigDecimal1= new BigDecimal(-Integer.MAX_VALUE);

@@ -73,7 +73,7 @@ public class TestGuava {
         Collection<String> filter = Collections2.filter(strings, new Predicate<String>() {
             @Override
             public boolean apply(String s) {
-                return s.contains("shuyi");
+                return !s.contains("shuyi");
             }
         });
         System.out.println(filter.getClass());
