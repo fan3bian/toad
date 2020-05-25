@@ -26,4 +26,20 @@ public class TstException {
             throw new IllegalArgumentException("illegal param");
         new FileInputStream(new File("a,txt"));
     }
+    @Test
+    public void test3(){
+        g();
+    }
+    static void g(){
+        f();
+    }
+    static void f(){
+        try {
+            throw new RuntimeException();
+        } catch (RuntimeException e) {
+            System.out.println(e.getStackTrace());
+            e.printStackTrace();
+        }
+    }
+
 }

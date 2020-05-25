@@ -3,6 +3,8 @@ package ext.xml;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 import com.thoughtworks.xstream.io.xml.XmlFriendlyNameCoder;
+import domain.Student;
+import io.serial.Person;
 
 /**
  * Desc: Xml转换工具类，针对下划线'_'处理
@@ -27,5 +29,11 @@ public class XmlUtil {
         xstream.processAnnotations(a);
         xstream.autodetectAnnotations(true);
         return xstream.fromXML(xml);
+    }
+
+    public static void main(String[] args) {
+        Student student = new Student();
+        student.setAge(2);
+        System.out.println(generateXmlTaskContent(student));
     }
 }

@@ -61,11 +61,7 @@ public class TestEnum {
     }
     @Test
     public void test3() throws Exception{
-        RtwSourceEnum[] values = RtwSourceEnum.values();
-        for (RtwSourceEnum value : values) {
-            System.out.println(value.getParamName());
-            System.out.println(value.getParamNameDes());
-        }
+
     }
 }
 		
