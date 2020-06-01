@@ -5,10 +5,12 @@
 
 package domain;
 
-import javax.validation.constraints.NotNull;
+
 import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.Range;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 public class WaybillCodeDTO {
     private String uuid;
