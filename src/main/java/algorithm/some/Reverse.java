@@ -18,10 +18,22 @@ public class Reverse {
         System.out.println(Arrays.toString(arr));
     }
 
+    public int reverseNum(int x) {
+        int rev = 0;
+        while (x != 0) {
+            int pop = x % 10;
+            x /= 10;
+            if (rev > Integer.MAX_VALUE/10 || (rev == Integer.MAX_VALUE / 10 && pop > 7)) return 0;
+            if (rev < Integer.MIN_VALUE/10 || (rev == Integer.MIN_VALUE / 10 && pop < -8)) return 0;
+            rev = rev * 10 + pop;
+        }
+        return rev;
+    }
+
     public static void main(String[] args) {
 //        int arr[] = {0,1,2,3,4,5,6,7,8,9};
 //        reverseArray(arr);
-        Map<String,String > map = new HashMap<>();
+        Map<String, String> map = new HashMap<>();
         map = new ConcurrentHashMap<>();
     }
 }
