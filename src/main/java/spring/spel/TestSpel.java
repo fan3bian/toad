@@ -6,9 +6,11 @@ import org.springframework.expression.spel.standard.SpelExpressionParser;
 import org.springframework.expression.spel.support.StandardEvaluationContext;
 
 public class TestSpel {
+    ExpressionParser parser = new SpelExpressionParser();
+
     @Test
     public void test() {
-        ExpressionParser parser = new SpelExpressionParser();
+
 //        Expression exp = parser.parseExpression("'Hello World'.bytes.length");
 //        int length = (Integer) exp.getValue();
 //        Expression expression = parser.parseExpression("5>5");
@@ -22,4 +24,6 @@ public class TestSpel {
         Boolean value = parser.parseExpression("#target > #value").getValue(context, Boolean.class);
         System.out.println(value);
     }
+
+
 }

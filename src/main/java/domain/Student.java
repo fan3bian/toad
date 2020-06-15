@@ -1,11 +1,13 @@
 package domain;
 
-import com.thoughtworks.xstream.XStream;
 import ext.xml.XmlUtil;
-import org.apache.xmlbeans.impl.common.XmlStreamUtils;
+import lombok.Data;
 
-import ext.xml.XmlUtil;
-
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Positive;
+import javax.validation.constraints.Size;
+import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -13,12 +15,19 @@ import java.util.List;
 /**
  * Created by zhangshuyi1 on 2018/2/15.
  */
+@Data
 public class Student {
-    private Long id ;
+    @Min(0)
+    @Max(1)
+    private Long id;
     private String name;
     private Integer age;
     private Date date;
+    private Double weight;
+    @Positive
+    private BigDecimal volume;
     private List<String> boxList;
+
     public Long getId() {
         return id;
     }
@@ -43,13 +52,13 @@ public class Student {
         this.age = age;
     }
 
-	public Date getDate() {
-		return date;
-	}
+    public Date getDate() {
+        return date;
+    }
 
-	public void setDate(Date date) {
-		this.date = date;
-	}
+    public void setDate(Date date) {
+        this.date = date;
+    }
 
     public List<String> getBoxList() {
         return boxList;
@@ -70,7 +79,7 @@ public class Student {
         System.out.println(XmlUtil.generateXmlTaskContent(student));
 
         String s = "<id>1231</id><name>1231</name><age>1231</age><date>1231</date>";
-        Student s2 = (Student) XmlUtil.fromXml(s,Student.class);
+        Student s2 = (Student) XmlUtil.fromXml(s, Student.class);
     }
-    
+
 }

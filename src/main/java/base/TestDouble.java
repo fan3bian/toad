@@ -2,8 +2,7 @@ package base;
 
 import org.junit.Test;
 
-import domain.BdFinanceDTO;
-import util.JsonUtil;
+
 
 import java.math.BigDecimal;
 
@@ -19,12 +18,7 @@ public class TestDouble {
 	}
 	@Test
 	public void test(){
-		BdFinanceDTO b =new BdFinanceDTO();
-		b.setCarrierId(1L);
-		b.setDeliveryTime("setDeliveryTime");
-		b.setSortBatchNo("sdf");
-		b.setSoNo("soNo");
-		System.out.println(JsonUtil.toJson(b));
+
 	}
 	@Test
 	public void testBigDecimal(){
