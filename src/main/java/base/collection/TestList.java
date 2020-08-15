@@ -5,6 +5,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 
 public class TestList{
     @Test
@@ -33,5 +34,15 @@ public class TestList{
         System.out.println(Arrays.toString(stringsb));
         System.out.println(Arrays.toString(b));
 //        collection.add(null);
+    }
+    @Test
+    public void t4(){
+//        String a[] = new String[]{};
+        List<String> strings = Arrays.asList("1", "2", "3");
+        m(strings);
+        System.out.println(strings);
+    }
+    private void m(List<String> list){
+        list = new ArrayList<>();
     }
 }
