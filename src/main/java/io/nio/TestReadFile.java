@@ -1,5 +1,6 @@
 package io.nio;
 
+import io.netty.channel.ChannelFuture;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -54,4 +55,13 @@ public class TestReadFile {
         randomAccessFile.close();
 
     }
+
+    @Test
+    public void readFile() throws IOException {
+        RandomAccessFile randomAccessFile = new RandomAccessFile("src/main/resources/log4j2.xml", "r");
+        FileChannel channel = randomAccessFile.getChannel();
+//        ChannelFuture channelFuture = new ChannelFuture();
+
+    }
+
 }

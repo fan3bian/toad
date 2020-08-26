@@ -3,9 +3,11 @@ package io.bio;
 import java.io.*;
 import java.net.URL;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.Enumeration;
+import java.util.Scanner;
 
 import interfaces.S;
 import org.junit.Test;
@@ -94,6 +96,26 @@ public class TestIO {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
+		}
+	}
+	@Test
+	public void testPrintWriter(){
+//		Scanner scanner = null;
+//		try {
+//			scanner = new Scanner(new File("src/main/resources/log4j2.xml"));
+//			while (scanner.hasNext()) {
+//				System.out.println(scanner.nextLine());
+//			}
+//		} catch (FileNotFoundException e) {
+//			e.printStackTrace();
+//		} finally {
+//			if (scanner != null) {
+//				scanner.close();
+//			}
+//		}
+		try (PrintWriter writer = new PrintWriter(new File("test.txt"))) {
+			writer.println("Hello World");
+		} catch (FileNotFoundException e) {
 		}
 	}
 }
