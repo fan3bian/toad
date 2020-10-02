@@ -1,4 +1,4 @@
-package base;
+package base.primary;
 
 
 import org.junit.Test;
@@ -85,4 +85,15 @@ public class TestString {
 		System.out.println("WwWwTt".toLowerCase(Locale.ENGLISH));
 		System.out.println("WwWwTt".toLowerCase(Locale.US));
 	}
+	@Test
+	public void testEquals(){
+		String x = "string";
+		String y = "string";
+		String z = new String("string");
+		System.out.println(x==y); // true 相同引用,常量池
+		System.out.println(x==z); // false new关键字会开辟新的内存空间
+		System.out.println(x.equals(y)); // true
+		System.out.println(x.equals(z)); // true
+	}
+
 }
