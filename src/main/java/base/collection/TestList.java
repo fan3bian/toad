@@ -2,10 +2,7 @@ package base.collection;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 public class TestList{
     @Test
@@ -44,5 +41,19 @@ public class TestList{
     }
     private void m(List<String> list){
         list = new ArrayList<>();
+
+
     }
+    @Test
+    public void t5(){
+        List<Integer> nums = new ArrayList<>();
+        nums.add(1);
+        nums.add(1);
+        boolean remove = nums.remove(Integer.valueOf(1));
+        System.out.println(nums);
+        nums = new LinkedList<>();
+        Object o = new Object();
+        System.out.println(o.hashCode());
+    }
+
 }
