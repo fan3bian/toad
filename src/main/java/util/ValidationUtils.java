@@ -1,6 +1,8 @@
 package util;
 
 import com.google.common.collect.Lists;
+import domain.Item;
+import domain.Order;
 import domain.Student;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -41,14 +43,9 @@ public class ValidationUtils {
 
     public static void validate2(Object object, Class<?>... groups) {
 
-        Instant now = Instant.now();
-        Validator validator = validatorFactory.getValidator();
-        Instant.now();
-        System.out.println(RamUsageEstimator.sizeOf(validator));
-        //validator
 
-//        Validator validator2 = validatorFactory.getValidator();
-//        System.out.println(validator == validator2);
+        Validator validator = validatorFactory.getValidator();
+
         Set<ConstraintViolation<Object>> validateResult = validator.validate(object, groups);
         if (!validateResult.isEmpty()) {   //如果校验有值
             List<String> errMsgList = new ArrayList<String>();
@@ -57,24 +54,25 @@ public class ValidationUtils {
                 ConstraintViolation violation = (ConstraintViolation) iterator.next();
                 errMsgList.add(violation.getMessage());
             }
-            System.out.println(false);
+            System.out.println(validateResult);
         } else {
-            System.out.println(false);
+            System.out.println(validateResult);
         }
-        System.out.println(RamUsageEstimator.sizeOf(validator));
 
     }
 
     public static void main(String[] args) {
 
-        Student student = new Student();
-        student.setId(-1L);
-        student.setName(StringUtils.EMPTY);
-        student.setAge(-1);
-        student.setDate(null);
-        student.setBoxList(Lists.<String>newArrayList());
+        Order order = new Order();
+        order.setOrderNo("0000");
+        order.setSubOrder(false);
+        order.setCod(false);
+        order.setBizNo("0000");
+        order.setAmount(new BigDecimal("3333.21"));
+        order.setItemList(Lists.<Item>newArrayList());
 
-        validate2(student);
+
+        validate2(order);
 
     }
 

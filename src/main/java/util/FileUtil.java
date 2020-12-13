@@ -1,6 +1,11 @@
 package util;
 
+import org.apache.commons.io.FileUtils;
+
+import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -16,6 +21,11 @@ public class FileUtil {
 //        Stream<String> stream = Files.lines(Paths.get(filePath), StandardCharsets.UTF_8);
 //        stream.forEach(System.out::println);
         return null;
+    }
+    public static String getMsgBody(String url) throws IOException {
+        URL resource = FileUtil.class.getClassLoader().getResource(url);
+        File file = new File(resource.getPath());
+        return FileUtils.readFileToString(file, Charset.defaultCharset());
     }
 
     public static void main(String[] args) throws Exception{
