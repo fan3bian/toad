@@ -1,5 +1,7 @@
 package base;
 
+import org.junit.Test;
+
 import java.util.*;
 
 public class TestArray {
@@ -13,5 +15,10 @@ public class TestArray {
         List<String> a = Arrays.asList("a");
         boolean a1 = Collections.addAll(a, "a");
         Deque deque =new ArrayDeque();
+    }
+    @Test
+    public void test2(){
+        List<Object> objects = Arrays.asList(null);
+        System.out.println(objects);
     }
 }

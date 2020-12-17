@@ -1,4 +1,4 @@
-package trdLib.apache;
+package ext.apache.log.apache;
 
 import org.junit.Test;
 

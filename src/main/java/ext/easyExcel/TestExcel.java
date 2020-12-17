@@ -1,8 +1,8 @@
-package trdLib.easyExcel;
+package ext.easyExcel;
 
 import com.alibaba.excel.EasyExcel;
 import org.junit.Test;
-import trdLib.ExcelAnalysisUtils;
+import ext.ExcelAnalysisUtils;
 import util.JsonUtil;
 
 import java.io.FileInputStream;

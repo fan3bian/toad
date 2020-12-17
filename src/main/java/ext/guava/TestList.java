@@ -1,12 +1,9 @@
-package trdLib.guava;
+package ext.guava;
 
 import com.google.common.collect.Lists;
-import com.google.common.math.IntMath;
 import domain.Order;
 import org.junit.Test;
-import util.JsonUtil;
 
-import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

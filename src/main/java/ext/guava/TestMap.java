@@ -1,4 +1,4 @@
-package trdLib.guava;
+package ext.guava;
 
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
