@@ -1,7 +1,10 @@
 package base.time;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.Instant;
+import java.util.TimeZone;
 
 public class Test {
 
@@ -16,5 +19,11 @@ public class Test {
         System.out.println("Difference in seconds : " + Duration.between(inst1, inst2).getSeconds());
         System.out.println("Difference in seconds : " + Duration.between(inst2, inst1).getSeconds());
 
+    }
+    @org.junit.Test
+    public void testTimeZone() throws ParseException {
+        SimpleDateFormat f1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        f1.setTimeZone(TimeZone.getTimeZone("CST"));
+        System.out.println(f1.parse("2015-09-01 00:00:00"));
     }
 }

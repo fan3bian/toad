@@ -1,4 +1,4 @@
-package ext.apache.log.apache;
+package ext.apache;
 
 import org.junit.Test;
 

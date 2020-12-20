@@ -23,15 +23,15 @@ public class TestMapper {
         student.setBoxList(Lists.<String>newArrayList());
         student.setWeight(-1d);
 
-        System.out.println(RamUsageEstimator.sizeOf(modelMapper));
+        System.out.println(RamUsageEstimator.shallowSizeOf(modelMapper));
         StudentDto studentDTO = modelMapper.map(student, StudentDto.class);
-        System.out.println(RamUsageEstimator.sizeOf(modelMapper));
+        System.out.println(RamUsageEstimator.shallowSizeOf(modelMapper));
         Student student2 = modelMapper.map(studentDTO, Student.class);
-        System.out.println(RamUsageEstimator.sizeOf(modelMapper));
+        System.out.println(RamUsageEstimator.shallowSizeOf(modelMapper));
         Order map = modelMapper.map(studentDTO, Order.class);
-        System.out.println(RamUsageEstimator.sizeOf(modelMapper));
+        System.out.println(RamUsageEstimator.shallowSizeOf(modelMapper));
         Order map2 = modelMapper.map(studentDTO, Order.class);
-        System.out.println(RamUsageEstimator.sizeOf(modelMapper));
+        System.out.println(RamUsageEstimator.shallowSizeOf(modelMapper));
 
         System.out.println(JsonUtil.toJson(studentDTO));
         System.out.println(JsonUtil.toJson(student2));
