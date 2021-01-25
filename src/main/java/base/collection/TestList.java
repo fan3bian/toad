@@ -34,8 +34,12 @@ public class TestList{
     }
     @Test
     public void t4(){
-//        String a[] = new String[]{};
         List<String> strings = Arrays.asList("1", "2", "3");
+        int i = 0;
+        for (String s : strings) {
+            System.out.println(s);
+            System.out.println(strings.get(i++));
+        }
         m(strings);
         System.out.println(strings);
     }

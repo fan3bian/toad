@@ -2,15 +2,15 @@ package base.polymorphism;
 
 class A {
     public String show(D obj){
-           return ("A and D");
+           return ("Abandon and D");
     }
     public String show(A obj){
-           return ("A and A");
+           return ("Abandon and Abandon");
     }
 }   
 class B extends A{ 
     public String show(A obj){  
-           return ("B and A");  
+           return ("B and Abandon");
     }   
     public String show(B obj){  
            return ("B and B");  
