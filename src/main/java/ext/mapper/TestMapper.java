@@ -17,24 +17,26 @@ public class TestMapper {
         ModelMapper modelMapper = new ModelMapper();
         Student student = new Student();
         student.setId(-1L);
-        student.setName(StringUtils.EMPTY);
-        student.setAge(-1);
-        student.setDate(null);
-        student.setBoxList(Lists.<String>newArrayList());
-        student.setWeight(-1d);
+//        student.setName(StringUtils.EMPTY);
+//        student.setAge(-1);
+//        student.setDate(null);
+//        student.setBoxList(Lists.<String>newArrayList());
+//        student.setWeight(-1d);
 
-        System.out.println(RamUsageEstimator.shallowSizeOf(modelMapper));
-        StudentDto studentDTO = modelMapper.map(student, StudentDto.class);
-        System.out.println(RamUsageEstimator.shallowSizeOf(modelMapper));
-        Student student2 = modelMapper.map(studentDTO, Student.class);
-        System.out.println(RamUsageEstimator.shallowSizeOf(modelMapper));
-        Order map = modelMapper.map(studentDTO, Order.class);
-        System.out.println(RamUsageEstimator.shallowSizeOf(modelMapper));
-        Order map2 = modelMapper.map(studentDTO, Order.class);
-        System.out.println(RamUsageEstimator.shallowSizeOf(modelMapper));
-
-        System.out.println(JsonUtil.toJson(studentDTO));
-        System.out.println(JsonUtil.toJson(student2));
+        System.out.println(RamUsageEstimator.shallowSizeOf(student));//
+        System.out.println(RamUsageEstimator.sizeOf(student));
+        System.out.println(RamUsageEstimator.humanSizeOf(student));
+//        StudentDto studentDTO = modelMapper.map(student, StudentDto.class);
+//        System.out.println(RamUsageEstimator.shallowSizeOf(modelMapper));
+//        Student student2 = modelMapper.map(studentDTO, Student.class);
+//        System.out.println(RamUsageEstimator.shallowSizeOf(modelMapper));
+//        Order map = modelMapper.map(studentDTO, Order.class);
+//        System.out.println(RamUsageEstimator.shallowSizeOf(modelMapper));
+//        Order map2 = modelMapper.map(studentDTO, Order.class);
+//        System.out.println(RamUsageEstimator.shallowSizeOf(modelMapper));
+//
+//        System.out.println(JsonUtil.toJson(studentDTO));
+//        System.out.println(JsonUtil.toJson(student2));
 
 
     }
