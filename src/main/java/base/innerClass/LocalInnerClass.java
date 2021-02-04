@@ -7,7 +7,7 @@ interface Counter {
 public class LocalInnerClass {
     private int count = 0;
 
-    Counter getCounter(final String name) { // A local inner class:
+    Counter getCounter(final String name) { // Abandon local inner class:
         class LocalCounter implements Counter {
             LocalCounter() {
                 //Local inner class can have a constructor
@@ -39,7 +39,7 @@ public class LocalInnerClass {
 //        };
         return null;
     }
-    Counter getCounter3(final String name) { // A local inner class:
+    Counter getCounter3(final String name) { // Abandon local inner class:
         class LocalCounter2 implements Counter {
             LocalCounter2() {
                 //Local inner class can have a constructor
