@@ -1,8 +1,6 @@
 package algorithm.leetcode.backTrack;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 /**
  * N皇后
@@ -67,5 +65,44 @@ public class Test52 {
 
     public static void main(String[] args) {
 
+    }
+
+    public static class Test46 {
+        public static List<List<Integer>> permute(int[] nums) {
+            List<List<Integer>> res = new ArrayList<>();
+            int len = nums.length;
+            if (len == 0) {
+                return new ArrayList<>();
+            }
+            Deque<Integer> path = new ArrayDeque<Integer>();
+            boolean used[] =new boolean[len];
+            dfs(nums,0,path,used,res);
+
+            return res;
+        }
+
+        /**
+         *
+         * @param nums
+         * @param depth
+         * @param path 从根节点到任意节点的列表
+         * @param used
+         */
+        private static void dfs(int[] nums,  int depth, Deque<Integer> path, boolean[] used,List<List<Integer>> res){
+            if (depth == nums.length) {
+                res.add(new ArrayList<>(path));
+                return;
+            }
+            for (int i = 0; i < nums.length; i++) {
+                if(used[i]){
+                    continue;
+                }
+                path.addLast(nums[i]);
+                used[i] = true;
+                dfs(nums,depth+1,path,used,res);
+                path.removeLast();
+                used[i]= false;
+            }
+        }
     }
 }
