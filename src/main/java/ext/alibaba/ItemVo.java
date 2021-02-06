@@ -8,15 +8,18 @@ import java.math.BigDecimal;
 @Data
 public class ItemVo {
 
-    @ExcelProperty(index = 0)
+    @ExcelProperty("行号")
     private String lineNo;
 
-    @ExcelProperty(index = 1)
-    private String ownerGoodsNo;
+    @ExcelProperty("商家商品编码")
+    private String spGoodsNo;
 
-    @ExcelProperty(index = 2)
+    @ExcelProperty("商品数量(主单位)")
     private BigDecimal applyMainQty;
 
-    @ExcelProperty(index = 3)
+    @ExcelProperty("价格(主单位含税价)")
+    private BigDecimal taxInMainUnitPrice;
+
+    @ExcelProperty("备注")
     private String remark;
 }

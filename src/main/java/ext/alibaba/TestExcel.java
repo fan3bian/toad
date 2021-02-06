@@ -9,7 +9,9 @@ public class TestExcel {
 
     @Test
     public void readExcelTest() {
-        InputStream resourceAsStream = TestExcel.class.getClassLoader().getResourceAsStream("itemDto.xlsx");
+        String fileName = "itemDto.xlsx";
+        fileName = "b.xlsx";
+        InputStream resourceAsStream = TestExcel.class.getClassLoader().getResourceAsStream(fileName);
         EasyExcel.read(resourceAsStream, ItemVo.class, new ItemVoExcelListener()).sheet().doRead();
     }
 }
