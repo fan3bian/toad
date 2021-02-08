@@ -10,7 +10,7 @@ import java.nio.charset.Charset;
 public class TestReadFile {
     @Test
     public void inputStream() throws IOException {
-        String filePath = "E:\\github\\go\\a.txt";
+        String filePath = "E:\\github\\go\\sql.txt";
 //        System.out.println(readFileInputStream(filePath));
 //        System.out.println(readFileByReader(filePath));
         System.out.println(readFileByBufferReader(filePath));

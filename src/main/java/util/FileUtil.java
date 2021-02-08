@@ -15,12 +15,16 @@ import java.text.SimpleDateFormat;
  */
 public class FileUtil {
     public static String readFile(String filePath) throws IOException {
+//        Stream<String> stream = Files.lines(Paths.get(filePath), StandardCharsets.UTF_8);
+//        stream.forEach(System.out::println);
+        return null;
+    }
+    public static String writeFile(String filePath) throws IOException {
 
 //        Stream<String> stream = Files.lines(Paths.get(filePath), StandardCharsets.UTF_8);
 //        stream.forEach(System.out::println);
         return null;
     }
-
     public static InputStream getInputStream(String url) throws IOException {
         return FileUtil.class.getClassLoader().getResourceAsStream(url);
     }
