@@ -5,13 +5,11 @@ import org.junit.Test;
 
 public class TestObjectSize {
     public static void main(String[] args) throws InterruptedException {
-        Abandon a = new Abandon();
         Thread.sleep(1000* 60 * 10);
     }
     @Test
     public void test1(){
         int a = 1;
-        Abandon abandon1 = new Abandon();
         ObjectA objectA =new ObjectA();
 //        System.out.println(RamUsageEstimator.sizeOf(abandon1));
 //        System.out.println(RamUsageEstimator.shallowSizeOf(a));
