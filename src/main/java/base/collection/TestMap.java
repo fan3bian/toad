@@ -7,6 +7,7 @@ import util.JsonUtil;
 
 import java.math.BigDecimal;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class TestMap {
     private static Map<Integer, String> map = Maps.newHashMap();
@@ -50,5 +51,39 @@ public class TestMap {
         System.out.println(set);
 //        System.out.println(map.put(null,"2"));
 //        System.out.println(map.put(null,null));
+    }
+
+    @Test
+    public void test4() {
+        List<String> list = Arrays.asList("a","b","c");
+        Map<Boolean, List<String>> collect = list.stream().collect(Collectors.groupingBy(x -> x.length() > 0));
+        System.out.println(collect.getClass());
+        List<String> a = collect.remove("a");
+        System.out.println(a);
+    }
+    @Test
+    public void test5() {
+        System.out.println(true & true);//true
+        System.out.println(true & false);//false
+        System.out.println(false & false);//false
+
+        System.out.println(true & true);//true
+        System.out.println(true & false);//false
+        System.out.println(false & false);//false
+
+        System.out.println(true ^ true);//false
+        System.out.println(true ^ false);//false
+        System.out.println(false ^ false);//true
+
+    }
+    @Test
+    public void test6() {
+        HashMap<String, Integer> prices = new HashMap<>();
+
+        // 往HashMap中添加映射关系
+//        prices.put("Shoes", 200);
+        prices.put("Bag", 300);
+        prices.computeIfPresent("Shoes", (key, value) -> value + value * 10/100);
+        System.out.println("HashMap: " + prices);
     }
 }
