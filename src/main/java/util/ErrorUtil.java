@@ -25,6 +25,7 @@ public class ErrorUtil {
 
     public static void main(String[] args) {
         ifInValid(RegexConstant.DOUBLE,"-10.00002","温度");
+
 //        ErrorUtil.ifSizeEmpty(null,"hh");
     }
 }
